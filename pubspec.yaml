@@ -1,0 +1,64 @@
+name: tafsir_library
+description: A Flutter/Dart library for displaying and accessing Tafsir,
+  Translations and Tajweed data with ready-made UI widgets and a direct API
+  facade.
+version: 1.0.0
+homepage: https://github.com/alheekmahlib/tafsir_library
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  arabic_justified_text: ^1.0.2
+  archive: ^4.0.7
+  dio: ^5.9.1
+  flutter:
+    sdk: flutter
+  get: ^4.7.3
+  get_storage: ^2.1.1
+  html: ^0.15.6
+  path: ^1.9.1
+  path_provider: ^2.1.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lints: ^6.1.0
+
+platforms:
+  ? linux
+  ? windows
+  ? web
+  ? android
+  ? ios
+  ? macos
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/saadi.json.gz
+    - assets/en.json.gz
+
+  fonts:
+    - family: cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 900
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Cairo-Regular.ttf
+    - family: naskh
+      fonts:
+        - asset: assets/fonts/NotoNaskhArabic-VariableFont_wght.ttf
+    - family: hafs
+      fonts:
+        - asset: assets/fonts/UthmanicHafs_V20.ttf
+    - family: surahName
+      fonts:
+        - asset: assets/fonts/surah_name_naskh.ttf
+    - family: surah-name-v4
+      fonts:
+        - asset: assets/fonts/surah-name-v4.ttf

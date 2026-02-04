@@ -1,0 +1,48 @@
+import 'dart:async';
+import 'dart:convert' show json, utf8, jsonDecode;
+import 'dart:developer' show log;
+import 'dart:io' show File, Directory, Platform;
+import 'dart:typed_data' show Uint8List;
+
+import 'package:arabic_justified_text/arabic_justified_text.dart';
+import 'package:archive/archive.dart' show ZipDecoder;
+import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart' show kDebugMode, kIsWeb;
+import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:get/get.dart' hide Response;
+import 'package:get_storage/get_storage.dart';
+import 'package:html/dom.dart' as dom;
+import 'package:html/parser.dart' as html_parser;
+import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
+
+import 'service/gzip_json_asset_service_stub.dart';
+import 'widgets/download_button_widget.dart';
+import 'widgets/header_dialog_widget.dart';
+
+part 'controller/tafsir_ctrl.dart';
+part 'controller/tafsir_ui.dart';
+part 'controller/tajweed_aya_ctrl.dart';
+part 'core/data/models/tafsir.dart';
+part 'core/data/models/tafsir_and_translate_names.dart';
+part 'core/data/models/tafsir_name_model.dart';
+part 'core/data/models/tafsir_style.dart';
+part 'core/data/models/tajweed_aya_models.dart';
+part 'core/data/models/translation_model.dart';
+part 'core/data/repositories/tajweed_aya_repository.dart';
+part 'core/extensions/context_extensions.dart';
+part 'core/extensions/download_extension.dart';
+part 'core/extensions/font_size_extension.dart';
+part 'core/extensions/helpers.dart';
+part 'core/extensions/show_tafsir_extension.dart';
+part 'core/extensions/text_span_extension.dart';
+part 'core/utils/storage_constants.dart';
+part 'pages/show_tafsir.dart';
+part 'service/sura_json_files_service.dart';
+part 'service/zip_download_service.dart';
+part 'widgets/actual_tafsir_widget.dart';
+part 'widgets/change_tafsir.dart';
+part 'widgets/marked_content_span.dart';
+part 'widgets/tafsir_pages_build.dart';
+part 'widgets/tajweed_aya_tab.dart';
