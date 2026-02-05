@@ -40,6 +40,7 @@ class TafsirStyle {
   final Color? dialogCloseIconColor;
   final Color? fontSizeIconColor;
   final bool? withBackButton;
+  final Widget? backButtonWidget;
 
   // Tajweed (Ayah) tab texts/styles
   final String? tajweedSurahNumberErrorText;
@@ -111,6 +112,7 @@ class TafsirStyle {
     this.ayahNameText,
     this.fontSizeIconColor,
     this.tajweedName,
+    this.backButtonWidget,
   });
 
   TafsirStyle copyWith({
@@ -168,6 +170,7 @@ class TafsirStyle {
     String? ayahNameText,
     Color? fontSizeIconColor,
     String? tajweedName,
+    Widget? backButtonWidget,
   }) {
     return TafsirStyle(
       fontSizeWidget: fontSizeWidget ?? this.fontSizeWidget,
@@ -244,6 +247,7 @@ class TafsirStyle {
       ayahNameText: ayahNameText ?? this.ayahNameText,
       fontSizeIconColor: fontSizeIconColor ?? this.fontSizeIconColor,
       tajweedName: tajweedName ?? this.tajweedName,
+      backButtonWidget: backButtonWidget ?? this.backButtonWidget,
     );
   }
 
@@ -384,6 +388,10 @@ class TafsirStyle {
       ayahNameText: 'آية',
       fontSizeIconColor: Color(0xFFC8A24A),
       tajweedName: 'أحكام التجويد',
+      backButtonWidget: IconButton(
+        onPressed: () => Navigator.pop(context),
+        icon: const Icon(Icons.arrow_back_ios_new_rounded),
+      ),
     );
   }
 }

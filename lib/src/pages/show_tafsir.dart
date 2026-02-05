@@ -272,13 +272,10 @@ class _TopWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Stack(
         children: [
-          if (s.withBackButton ?? true)
+          if ((s.withBackButton ?? true) && s.backButtonWidget != null)
             Align(
               alignment: AlignmentDirectional.centerStart,
-              child: IconButton(
-                onPressed: () => Navigator.maybePop(context),
-                icon: Icon(Icons.arrow_back, color: primaryColor),
-              ),
+              child: s.backButtonWidget!,
             ),
           Row(
             mainAxisSize: MainAxisSize.min,
