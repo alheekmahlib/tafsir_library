@@ -310,6 +310,8 @@ class _TopWidget extends StatelessWidget {
                           fontFamily: 'surahName',
                           package: 'tafsir_library',
                           fontSize: 46,
+                          fontFamilyFallback: const ["surahName"],
+                          inherit: false,
                         ),
                       ),
                       Text(
