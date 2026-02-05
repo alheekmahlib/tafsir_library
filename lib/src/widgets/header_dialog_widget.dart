@@ -6,6 +6,7 @@ class HeaderDialogWidget extends StatelessWidget {
   final Gradient? backgroundGradient;
   final Color? titleColor;
   final Color? closeIconColor;
+  final String? closeTooltip;
   const HeaderDialogWidget({
     super.key,
     this.isDark = false,
@@ -13,6 +14,7 @@ class HeaderDialogWidget extends StatelessWidget {
     this.backgroundGradient,
     this.titleColor,
     this.closeIconColor,
+    this.closeTooltip,
   });
 
   @override
@@ -58,7 +60,7 @@ class HeaderDialogWidget extends StatelessWidget {
         Align(
           alignment: AlignmentDirectional.centerStart,
           child: IconButton(
-            tooltip: 'إغلاق',
+            tooltip: closeTooltip ?? 'إغلاق',
             icon: Icon(Icons.close,
                 color:
                     closeIconColor ?? (isDark! ? Colors.white : Colors.black),

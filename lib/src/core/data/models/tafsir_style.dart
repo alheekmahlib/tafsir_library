@@ -14,11 +14,17 @@ class TafsirStyle {
   final Color? unSelectedTafsirTextColor;
   final Color? selectedTafsirBorderColor;
   final Color? unSelectedTafsirBorderColor;
+  final Color? accentColor;
+  final Color? controlsBackgroundColor;
+  final Color? controlsBorderColor;
+  final Color? tabBarBackgroundColor;
+  final Color? tabBarIndicatorColor;
+  final Color? tabBarLabelColor;
+  final Color? tabBarUnselectedLabelColor;
   final Color? backgroundColor;
   final Color? textColor;
   final Color? tafsirBackgroundColor;
   final Color? dividerColor;
-  final double? fontSize;
   final String? footnotesName;
   final double? horizontalMargin;
   final double? verticalMargin;
@@ -38,9 +44,12 @@ class TafsirStyle {
   final Color? dialogHeaderTitleColor;
   final String? dialogHeaderTitle;
   final Color? dialogCloseIconColor;
+  final String? dialogCloseTooltipText;
   final Color? fontSizeIconColor;
   final bool? withBackButton;
   final Widget? backButtonWidget;
+  final String? changeTafsirSemanticsLabel;
+  final String? fontSizeSemanticsLabel;
 
   // Tajweed (Ayah) tab texts/styles
   final String? tajweedSurahNumberErrorText;
@@ -71,9 +80,15 @@ class TafsirStyle {
     this.unSelectedTafsirColor,
     this.selectedTafsirBorderColor,
     this.unSelectedTafsirBorderColor,
+    this.accentColor,
+    this.controlsBackgroundColor,
+    this.controlsBorderColor,
+    this.tabBarBackgroundColor,
+    this.tabBarIndicatorColor,
+    this.tabBarLabelColor,
+    this.tabBarUnselectedLabelColor,
     this.selectedTafsirTextColor,
     this.unSelectedTafsirTextColor,
-    this.fontSize,
     this.footnotesName,
     this.dividerColor,
     this.horizontalMargin,
@@ -95,6 +110,7 @@ class TafsirStyle {
     this.dialogHeaderTitleColor,
     this.dialogHeaderTitle,
     this.dialogCloseIconColor,
+    this.dialogCloseTooltipText,
     this.tajweedSurahNumberErrorText,
     this.tajweedUnavailableText,
     this.tajweedDownloadText,
@@ -113,10 +129,11 @@ class TafsirStyle {
     this.fontSizeIconColor,
     this.tajweedName,
     this.backButtonWidget,
+    this.changeTafsirSemanticsLabel,
+    this.fontSizeSemanticsLabel,
   });
 
   TafsirStyle copyWith({
-    Widget? tafsirNameWidget,
     Widget? fontSizeWidget,
     String? translateName,
     String? tafsirName,
@@ -129,11 +146,17 @@ class TafsirStyle {
     Color? unSelectedTafsirTextColor,
     Color? selectedTafsirBorderColor,
     Color? unSelectedTafsirBorderColor,
+    Color? accentColor,
+    Color? controlsBackgroundColor,
+    Color? controlsBorderColor,
+    Color? tabBarBackgroundColor,
+    Color? tabBarIndicatorColor,
+    Color? tabBarLabelColor,
+    Color? tabBarUnselectedLabelColor,
     Color? backgroundColor,
     Color? textColor,
     Color? tafsirBackgroundColor,
     Color? dividerColor,
-    double? fontSize,
     String? footnotesName,
     double? horizontalMargin,
     double? verticalMargin,
@@ -153,6 +176,7 @@ class TafsirStyle {
     Color? dialogHeaderTitleColor,
     String? dialogHeaderTitle,
     Color? dialogCloseIconColor,
+    String? dialogCloseTooltipText,
     String? tajweedSurahNumberErrorText,
     String? tajweedUnavailableText,
     String? tajweedDownloadText,
@@ -171,6 +195,8 @@ class TafsirStyle {
     Color? fontSizeIconColor,
     String? tajweedName,
     Widget? backButtonWidget,
+    String? changeTafsirSemanticsLabel,
+    String? fontSizeSemanticsLabel,
   }) {
     return TafsirStyle(
       fontSizeWidget: fontSizeWidget ?? this.fontSizeWidget,
@@ -190,12 +216,21 @@ class TafsirStyle {
           selectedTafsirBorderColor ?? this.selectedTafsirBorderColor,
       unSelectedTafsirBorderColor:
           unSelectedTafsirBorderColor ?? this.unSelectedTafsirBorderColor,
+      accentColor: accentColor ?? this.accentColor,
+      controlsBackgroundColor:
+          controlsBackgroundColor ?? this.controlsBackgroundColor,
+      controlsBorderColor: controlsBorderColor ?? this.controlsBorderColor,
+      tabBarBackgroundColor:
+          tabBarBackgroundColor ?? this.tabBarBackgroundColor,
+      tabBarIndicatorColor: tabBarIndicatorColor ?? this.tabBarIndicatorColor,
+      tabBarLabelColor: tabBarLabelColor ?? this.tabBarLabelColor,
+      tabBarUnselectedLabelColor:
+          tabBarUnselectedLabelColor ?? this.tabBarUnselectedLabelColor,
       backgroundColor: backgroundColor ?? this.backgroundColor,
       textColor: textColor ?? this.textColor,
       tafsirBackgroundColor:
           tafsirBackgroundColor ?? this.tafsirBackgroundColor,
       dividerColor: dividerColor ?? this.dividerColor,
-      fontSize: fontSize ?? this.fontSize,
       footnotesName: footnotesName ?? this.footnotesName,
       horizontalMargin: horizontalMargin ?? this.horizontalMargin,
       verticalMargin: verticalMargin ?? this.verticalMargin,
@@ -222,6 +257,8 @@ class TafsirStyle {
           dialogHeaderTitleColor ?? this.dialogHeaderTitleColor,
       dialogHeaderTitle: dialogHeaderTitle ?? this.dialogHeaderTitle,
       dialogCloseIconColor: dialogCloseIconColor ?? this.dialogCloseIconColor,
+      dialogCloseTooltipText:
+          dialogCloseTooltipText ?? this.dialogCloseTooltipText,
       tajweedSurahNumberErrorText:
           tajweedSurahNumberErrorText ?? this.tajweedSurahNumberErrorText,
       tajweedUnavailableText:
@@ -248,6 +285,10 @@ class TafsirStyle {
       fontSizeIconColor: fontSizeIconColor ?? this.fontSizeIconColor,
       tajweedName: tajweedName ?? this.tajweedName,
       backButtonWidget: backButtonWidget ?? this.backButtonWidget,
+      changeTafsirSemanticsLabel:
+          changeTafsirSemanticsLabel ?? this.changeTafsirSemanticsLabel,
+      fontSizeSemanticsLabel:
+          fontSizeSemanticsLabel ?? this.fontSizeSemanticsLabel,
     );
   }
 
@@ -256,6 +297,7 @@ class TafsirStyle {
     final bg = isDark ? const Color(0xff1E1E1E) : const Color(0xfffaf7f3);
     final scheme = Theme.of(context).colorScheme;
     final primary = scheme.primary;
+    final accent = isDark ? const Color(0xFFD6B46A) : const Color(0xFFC8A24A);
     final onBg = isDark ? Colors.white : Colors.black87;
 
     // أسماء افتراضية نصية
@@ -292,11 +334,18 @@ class TafsirStyle {
       unSelectedTafsirTextColor: onBg,
       selectedTafsirBorderColor: primary,
       unSelectedTafsirBorderColor: primary.withValues(alpha: 0.3),
+      accentColor: accent,
+      controlsBackgroundColor:
+          isDark ? const Color(0xFF2A2A2A) : const Color(0xFFFFFFFF),
+      controlsBorderColor: isDark ? Colors.white12 : const Color(0xFFEDE4D6),
+      tabBarBackgroundColor: accent.withValues(alpha: 0.1),
+      tabBarIndicatorColor: accent.withValues(alpha: 0.5),
+      tabBarLabelColor: Colors.white,
+      tabBarUnselectedLabelColor: isDark ? Colors.white70 : Colors.black54,
       changeTafsirDialogHeight: MediaQuery.of(context).size.height * 0.7,
       changeTafsirDialogWidth: MediaQuery.of(context).size.width,
 
       // النصوص والأحجام
-      fontSize: 18.0,
       footnotesName: defaultFootnotesName,
       tafsirIsEmptyNote: defaultEmptyNote,
 
@@ -368,6 +417,7 @@ class TafsirStyle {
       ),
       dialogHeaderTitleColor: onBg,
       dialogCloseIconColor: onBg,
+      dialogCloseTooltipText: 'إغلاق',
       dialogHeaderBackgroundGradient: LinearGradient(
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
@@ -388,6 +438,8 @@ class TafsirStyle {
       ayahNameText: 'آية',
       fontSizeIconColor: Color(0xFFC8A24A),
       tajweedName: 'أحكام التجويد',
+      changeTafsirSemanticsLabel: 'تغيير التفسير',
+      fontSizeSemanticsLabel: 'تغيير حجم الخط',
       backButtonWidget: IconButton(
         onPressed: () => Navigator.pop(context),
         icon: const Icon(Icons.arrow_back_ios_new_rounded),

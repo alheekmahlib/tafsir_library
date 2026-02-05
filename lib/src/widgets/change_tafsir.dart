@@ -20,7 +20,7 @@ class ChangeTafsirDialog extends StatelessWidget {
     return Semantics(
       button: true,
       enabled: true,
-      label: 'Change Tafsir',
+      label: tafsirStyle?.changeTafsirSemanticsLabel ?? 'Change Tafsir',
       child: GestureDetector(
         onTap: () {
           showDialog(
@@ -116,6 +116,7 @@ class DailogBuild extends StatelessWidget {
                       backgroundGradient:
                           tafsirStyle?.dialogHeaderBackgroundGradient,
                       closeIconColor: tafsirStyle?.dialogCloseIconColor,
+                      closeTooltip: tafsirStyle?.dialogCloseTooltipText,
                     ),
                   ),
                   Expanded(

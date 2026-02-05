@@ -14,7 +14,7 @@ extension FontSizeExtension on Widget {
           Semantics(
             button: true,
             enabled: true,
-            label: 'Change Font Size',
+            label: tafsirStyle?.fontSizeSemanticsLabel ?? 'Change Font Size',
             child: Icon(
               Icons.text_format_outlined,
               size: 34,

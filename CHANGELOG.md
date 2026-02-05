@@ -2,6 +2,7 @@
 
 * **FIX:**
 	* Selected tafsir container height.
+	* TafsirStyle.
 * **ADD:**
 	* backButtonWidget.
 

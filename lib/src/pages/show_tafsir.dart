@@ -45,13 +45,12 @@ class ShowTafsir extends StatelessWidget {
     final double sheetWidth = s.widthOfBottomSheet ?? deviceWidth;
     final Color surfaceColor = s.backgroundColor ??
         (isDark ? const Color(0xff1E1E1E) : const Color(0xffFAF6F0));
-    final Color cardColor =
-        isDark ? const Color(0xFF2A2A2A) : const Color(0xFFFFFFFF);
-    final Color accentColor =
-        isDark ? const Color(0xFFD6B46A) : const Color(0xFFC8A24A);
-    final Color primaryColor =
-        isDark ? const Color(0xFFD6B46A) : const Color(0xFFC8A24A);
-    final Color borderSoft = isDark ? Colors.white12 : const Color(0xFFEDE4D6);
+    final Color cardColor = s.controlsBackgroundColor ??
+        (isDark ? const Color(0xFF2A2A2A) : const Color(0xFFFFFFFF));
+    final Color accentColor = s.accentColor ??
+        (isDark ? const Color(0xFFD6B46A) : const Color(0xFFC8A24A));
+    final Color borderSoft = s.controlsBorderColor ??
+        (isDark ? Colors.white12 : const Color(0xFFEDE4D6));
     // تحسين الشكل: إضافة شريط علوي أنيق مع زر إغلاق واسم التفسير
     // UI Enhancement: Add a modern top bar with close button and tafsir name
     // final stored = GetStorage()
@@ -77,7 +76,6 @@ class ShowTafsir extends StatelessWidget {
                   const SizedBox(height: 8),
                   _TopWidget(
                     s: s,
-                    primaryColor: primaryColor,
                     accentColor: accentColor,
                     surahNumber: surahNumber,
                     ayahNumber: ayahNumber,
@@ -223,7 +221,7 @@ class _TapBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: accentColor.withValues(alpha: 0.1),
+      color: s.tabBarBackgroundColor ?? accentColor.withValues(alpha: 0.1),
       child: TabBar(
         labelStyle: s.tabBarLabelStyle ??
             TextStyle(
@@ -233,12 +231,13 @@ class _TapBarWidget extends StatelessWidget {
               fontSize: 13,
             ),
         indicator: BoxDecoration(
-          color: accentColor.withValues(alpha: 0.5),
+          color: s.tabBarIndicatorColor ?? accentColor.withValues(alpha: 0.5),
           borderRadius: BorderRadius.circular(8),
         ),
         indicatorSize: TabBarIndicatorSize.tab,
-        labelColor: Colors.white,
-        unselectedLabelColor: isDark ? Colors.white70 : Colors.black54,
+        labelColor: s.tabBarLabelColor ?? Colors.white,
+        unselectedLabelColor: s.tabBarUnselectedLabelColor ??
+            (isDark ? Colors.white70 : Colors.black54),
         padding: const EdgeInsets.symmetric(horizontal: 16),
         indicatorPadding:
             const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
@@ -254,14 +253,12 @@ class _TapBarWidget extends StatelessWidget {
 class _TopWidget extends StatelessWidget {
   const _TopWidget({
     required this.s,
-    required this.primaryColor,
     required this.accentColor,
     required this.surahNumber,
     required this.ayahNumber,
   });
 
   final TafsirStyle s;
-  final Color primaryColor;
   final Color accentColor;
   final int surahNumber;
   final int ayahNumber;
