@@ -45,8 +45,9 @@ class ActualTafsirWidget extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: fontSizeArabic,
-              fontWeight: FontWeight.bold,
               color: s.textColor,
+              fontFamily: 'hafs',
+              package: 'tafsir_library',
             ),
           ),
         // GetSingleAyah(
