@@ -255,8 +255,8 @@ class TafsirItemWidget extends StatelessWidget {
                             : Container(
                                 height: 20,
                                 width: 20,
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 14),
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 14, vertical: 14),
                                 decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(

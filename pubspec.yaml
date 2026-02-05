@@ -2,7 +2,7 @@ name: tafsir_library
 description: A Flutter/Dart library for displaying and accessing Tafsir,
   Translations and Tajweed data with ready-made UI widgets and a direct API
   facade.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/alheekmahlib/tafsir_library
 
 environment:

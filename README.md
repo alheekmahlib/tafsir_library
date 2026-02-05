@@ -62,7 +62,7 @@ Add to your pubspec.yaml:
 ```yaml
 dependencies:
     ...
-	tafsir_library: ^1.0.0
+	tafsir_library: ^1.0.1
 ```
 
 Then run:
