@@ -270,17 +270,18 @@ class _TopWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.center,
+      child: Stack(
         children: [
           if (s.withBackButton ?? true)
-            IconButton(
-              onPressed: () => Navigator.maybePop(context),
-              icon: Icon(Icons.arrow_back, color: primaryColor),
+            Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: IconButton(
+                onPressed: () => Navigator.maybePop(context),
+                icon: Icon(Icons.arrow_back, color: primaryColor),
+              ),
             ),
-          const SizedBox(width: 6),
           Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 width: 5,
