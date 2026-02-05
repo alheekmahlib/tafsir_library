@@ -277,59 +277,62 @@ class _TopWidget extends StatelessWidget {
               alignment: AlignmentDirectional.centerStart,
               child: s.backButtonWidget!,
             ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 5,
-                height: 90,
-                decoration: BoxDecoration(
-                  color: accentColor.withValues(alpha: 0.5),
-                  borderRadius: BorderRadius.circular(16),
+          Align(
+            alignment: Alignment.center,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 5,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    color: accentColor.withValues(alpha: 0.5),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                 ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: accentColor.withValues(alpha: 0.05),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-                child: Column(
-                  children: [
-                    Text(
-                      '$surahNumber',
-                      style: TextStyle(
-                        color: accentColor,
-                        fontFamily: 'surahName',
-                        package: 'tafsir_library',
-                        fontSize: 46,
+                Container(
+                  decoration: BoxDecoration(
+                    color: accentColor.withValues(alpha: 0.05),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  child: Column(
+                    children: [
+                      Text(
+                        '$surahNumber',
+                        style: TextStyle(
+                          color: accentColor,
+                          fontFamily: 'surahName',
+                          package: 'tafsir_library',
+                          fontSize: 46,
+                        ),
                       ),
-                    ),
-                    Text(
-                      '${s.ayahNameText} $ayahNumber',
-                      style: TextStyle(
-                        color: accentColor,
-                        fontFamily: 'cairo',
-                        package: 'tafsir_library',
-                        fontSize: 18,
-                        height: 1.3,
-                        fontWeight: FontWeight.w600,
+                      Text(
+                        '${s.ayahNameText} $ayahNumber',
+                        style: TextStyle(
+                          color: accentColor,
+                          fontFamily: 'cairo',
+                          package: 'tafsir_library',
+                          fontSize: 18,
+                          height: 1.3,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              Container(
-                width: 5,
-                height: 90,
-                decoration: BoxDecoration(
-                  color: accentColor.withValues(alpha: 0.5),
-                  borderRadius: BorderRadius.circular(16),
+                Container(
+                  width: 5,
+                  height: 90,
+                  decoration: BoxDecoration(
+                    color: accentColor.withValues(alpha: 0.5),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
