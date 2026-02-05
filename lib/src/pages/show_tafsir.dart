@@ -279,6 +279,7 @@ class _TopWidget extends StatelessWidget {
             ),
           Row(
             mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
                 width: 5,
