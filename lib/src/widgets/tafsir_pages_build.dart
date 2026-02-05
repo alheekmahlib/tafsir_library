@@ -8,6 +8,7 @@ class TafsirPagesBuild extends StatelessWidget {
   final int ayahNumber;
   final int surahNumber;
   final List<int>? pageAyahs;
+  final String? ayahText;
 
   TafsirPagesBuild({
     super.key,
@@ -18,6 +19,7 @@ class TafsirPagesBuild extends StatelessWidget {
     required this.ayahNumber,
     required this.surahNumber,
     this.pageAyahs,
+    this.ayahText,
   });
 
   final tafsirCtrl = TafsirCtrl.instance;
@@ -53,7 +55,7 @@ class TafsirPagesBuild extends StatelessWidget {
           orElse: () => const TafsirTableData(
               id: 0, tafsirText: '', ayahNum: 0, pageNum: 0, surahNum: 0),
         );
-        return _textBuild(width, context, ayahUQNumber, tafsir);
+        return _textBuild(width, context, ayahUQNumber, tafsir, ayahText);
         // }
         // return PageView.builder(
         //   controller: PageController(initialPage: selectedAyahIndexInFullPage),
@@ -73,7 +75,7 @@ class TafsirPagesBuild extends StatelessWidget {
   }
 
   Container _textBuild(double width, BuildContext context, int ayahIndex,
-      TafsirTableData tafsir) {
+      TafsirTableData tafsir, String? ayahText) {
     return Container(
       width: width,
       margin: EdgeInsets.symmetric(
@@ -113,6 +115,7 @@ class TafsirPagesBuild extends StatelessWidget {
               surahNumber: surahNumber,
               tafsir: tafsir,
               pageIndex: pageIndex,
+              ayahText: ayahText,
               isTafsir: tafsirCtrl.selectedTafsir.isTafsir,
               translationList: tafsirCtrl.translationList,
               fontSizeArabic: tafsirCtrl.fontSizeArabic.value,

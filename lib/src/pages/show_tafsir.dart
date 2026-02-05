@@ -17,6 +17,7 @@ class ShowTafsir extends StatelessWidget {
   final int surahNumber;
   final bool isDark;
   final TafsirStyle? tafsirStyle;
+  final String? ayahText;
 
   ShowTafsir({
     super.key,
@@ -27,6 +28,7 @@ class ShowTafsir extends StatelessWidget {
     required this.isDark,
     this.tafsirStyle,
     required this.surahNumber,
+    this.ayahText,
   });
 
   final tafsirCtrl = TafsirCtrl.instance;
@@ -94,6 +96,7 @@ class ShowTafsir extends StatelessWidget {
                     ayahNumber: ayahNumber,
                     surahNumber: surahNumber,
                     tajweedCtrl: tajweedCtrl,
+                    ayahText: ayahText,
                   ),
                 ],
               ),
@@ -117,6 +120,7 @@ class _TabBarViewWidget extends StatelessWidget {
     required this.ayahNumber,
     required this.surahNumber,
     required this.tajweedCtrl,
+    this.ayahText,
   });
 
   final Color cardColor;
@@ -129,6 +133,7 @@ class _TabBarViewWidget extends StatelessWidget {
   final int ayahNumber;
   final int surahNumber;
   final TajweedAyaCtrl tajweedCtrl;
+  final String? ayahText;
 
   @override
   Widget build(BuildContext context) {
@@ -189,6 +194,7 @@ class _TabBarViewWidget extends StatelessWidget {
                   isDark: isDark,
                   ayahNumber: ayahNumber,
                   surahNumber: surahNumber,
+                  ayahText: ayahText,
                 ),
               ),
             ],
