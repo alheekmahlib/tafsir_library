@@ -153,6 +153,20 @@ class TafsirLibrary {
           {String? databaseName}) =>
       tafsirCtrl.fetchTafsirAyah(ayahUQNumber, databaseName: databaseName);
 
+  /// الحصول على نص التفسير مباشرة من التفسير الحالي
+  /// Get tafsir entry directly from the current Tafsir
+  static TafsirTableData getTafsirFromCurrentTafsir(int ayahUQNumber) =>
+      tafsirCtrl.tafseerList.firstWhere(
+        (element) => element.id == ayahUQNumber,
+        orElse: () => const TafsirTableData(
+          id: 0,
+          tafsirText: '',
+          ayahNum: 0,
+          pageNum: 0,
+          surahNum: 0,
+        ),
+      );
+
   /// جلب الترجمة الحالية
   /// Fetch current translation
   static Future<void> fetchTranslate() => tafsirCtrl.fetchTranslate();

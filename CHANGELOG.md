@@ -5,6 +5,7 @@
 	* TafsirStyle.
 * **ADD:**
 	* backButtonWidget.
+	* Get tafsir entry directly from the current Tafsir.
 
 ## 1.0.0
 
