@@ -109,6 +109,8 @@ final tafsirText = items.isNotEmpty ? items.first.tafsirText : '';
 
 await TafsirLibrary.fetchTranslate();
 final translation = TafsirLibrary.getTranslationText(surahNumber, ayahNumber);
+
+TafsirLibrary.getTafsirFromCurrentTafsir(int ayahUQNumber);
 ```
 
 ## UI Utilities

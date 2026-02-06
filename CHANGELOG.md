@@ -2,10 +2,11 @@
 
 * **FIX:**
 	* Selected tafsir container height.
-	* TafsirStyle.
+
 * **ADD:**
-	* backButtonWidget.
+	* Add 'backButtonWidget' widget to `TafsirStyle`.
 	* Get tafsir entry directly from the current Tafsir.
+	* Add more parameters to `TafsirStyle`.
 
 ## 1.0.0
 
